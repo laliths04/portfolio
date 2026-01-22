@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lalith Madhavan - Data Analyst Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            color: #667eea;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            background: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .contact-info a:hover {
+            transform: translateY(-3px);
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-card ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .date {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .achievement-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Lalith Madhavan.V</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2>Data Analyst & Machine Learning Enthusiast</h2>
+            <p>Ambitious Data Analyst with expertise in Python, SQL, and machine learning who aims to utilize analytical aptitude, data visualization, and problem-solving to deliver actionable insights and inform data-driven choices.</p>
+            <div class="contact-info">
+                <a href="tel:+917707899859">📞 +91-7707899859</a>
+                <a href="mailto:lalithmadhavan2005@gmail.com">✉️ lalithmadhavan2005@gmail.com</a>
+                <a href="https://www.linkedin.com/in/lalith-madhavan-v" target="_blank">🔗 LinkedIn</a>
+                <a href="https://github.com/laliths04" target="_blank">💻 GitHub</a>
+                <span>📍 Erode</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
+                I'm enthusiastic about discovering trends using data storytelling and dedicated to ongoing learning and assisting in data-driven solutions within an innovative organization. With hands-on experience in machine learning, deep learning, and data visualization, I transform raw data into meaningful insights.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Key Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">SQL</div>
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">Data Analytics</div>
+                <div class="skill-item">Data Visualization</div>
+                <div class="skill-item">Data Cleaning</div>
+                <div class="skill-item">Power BI</div>
+                <div class="skill-item">Tableau</div>
+                <div class="skill-item">TensorFlow</div>
+                <div class="skill-item">FastAPI</div>
+                <div class="skill-item">Deep Learning</div>
+                <div class="skill-item">LLM APIs</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            
+            <div class="project-card">
+                <h3>🔹 Customer Churn Prediction using Deep Learning (ANN)</h3>
+                <ul>
+                    <li>Developed an Artificial Neural Network model to predict customer churn using demographic and service usage data.</li>
+                    <li>Performed data preprocessing, categorical encoding, feature scaling, and model evaluation.</li>
+                    <li>Helped identify high-risk customers to support retention strategies.</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">Keras</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>🔹 Customer Segmentation using Machine Learning & Power BI</h3>
+                <ul>
+                    <li>Built a customer segmentation model using K-Means clustering to group customers based on income and spending behavior.</li>
+                    <li>Applied the Elbow Method and feature scaling to determine optimal clusters.</li>
+                    <li>Designed an interactive Power BI dashboard to visualize customer segments and marketing insights.</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Power BI</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>🔹 Real-Time Customer Segmentation using FastAPI</h3>
+                <ul>
+                    <li>Deployed a trained machine learning model as a REST API using FastAPI for real-time customer segmentation.</li>
+                    <li>Implemented input validation and live prediction endpoints.</li>
+                    <li>Enabled real-time data flow for analytics and dashboard integration.</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Joblib</span>
+                    <span class="tech-tag">Machine Learning</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>🔹 LLM-Based Resume Screening System</h3>
+                <ul>
+                    <li>Built a resume screening application using a Large Language Model to evaluate resumes against job descriptions.</li>
+                    <li>Applied prompt engineering to score resumes, identify matching and missing skills, and generate improvement suggestions.</li>
+                    <li>Demonstrated practical usage of LLM APIs for real-world HR and recruitment automation.</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">LLM API</span>
+                    <span class="tech-tag">Prompt Engineering</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Machine Learning Intern</h3>
+                    <div class="date">SkillVertex | September 2024 – October 2024</div>
+                    <ul>
+                        <li>Participated in a project-led internship focused on Machine Learning and related fields.</li>
+                        <li>Gained hands-on experience through practical assignments and capstone projects.</li>
+                        <li>Applied key ML concepts to real-world problems using Python and relevant libraries (Scikit-learn, Pandas, NumPy).</li>
+                        <li>Delivered high-quality projects reflecting strong command over data analysis, model building, and evaluation techniques.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="timeline-item">
+                <h3>Bachelor of Technology (B.Tech) - Artificial Intelligence and Data Science</h3>
+                <div class="date">Erode Sengunthar Engineering College, Erode</div>
+                <p><strong>Expected Graduation:</strong> May 2026</p>
+            </div>
+
+            <h2 style="margin-top: 3rem;">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3>Data Science</h3>
+                    <p>Intellipaat</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Introduction to AI and Data Science</h3>
+                    <p>Infosys Springboard</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Data Science</h3>
+                    <p>Edutantr</p>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 3rem;">Achievements</h2>
+            <div class="achievement-card">
+                <h3>Paper Published: NeuroSkin - Advancing Human Sensory Restoration with AI Integrated Artificial Skin</h3>
+                <ul>
+                    <li>Focused on restoring the sense of touch for individuals with sensory loss by combining AI with smart artificial skin.</li>
+                    <li>Using advanced sensors, machine learning, and neuromorphic processing, the system mimics natural sensations like pressure and temperature in prosthetic limbs.</li>
+                    <li>Improves prosthetic realism, enhances interaction, and supports greater independence.</li>
+                    <li>Applications in healthcare, assistive technology, and human-computer interaction.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <div class="contact-info">
+                <a href="tel:+917708799859">📞 +91-7708799859</a>
+                <a href="mailto:lalithmadhavan2005@gmail.com">✉️ lalithmadhavan2005@gmail.com</a>
+                <a href="https://www.linkedin.com/in/lalith-madhavan-v" target="_blank">🔗 LinkedIn</a>
+                <a href="https://github.com/laliths04" target="_blank">💻 GitHub</a>
+            </div>
+            <p style="margin-top: 2rem; color: #666;">&copy; 2026 Lalith Madhavan.V. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
